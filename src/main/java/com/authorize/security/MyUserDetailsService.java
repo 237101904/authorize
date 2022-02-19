@@ -6,19 +6,17 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.stereotype.Service;
-
+import org.springframework.security.core.userdetails.UserDetailsService;
 import java.util.List;
 
 //暂时忽略配置使用配置文件中的配置 注释
 //@Service("userDetailsService")
-public class MyUserDetailsService implements org.springframework.security.core.userdetails.UserDetailsService {
+public class MyUserDetailsService implements UserDetailsService {
 
 
     /**
      * 编写实现类实现UserDetailsService，重写loadUserByUsername()方法
      * @param username - 前台传入的参数
-     * @return
      * @throws UsernameNotFoundException
      * 返回一个实现UserDetails接口的User对象
      *
